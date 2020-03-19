@@ -20,6 +20,7 @@ func _ready():
 	motion = move_and_slide(motion, UP)
 
 func _on_Stomped_body_entered(body):
+	print("stomped")
 	lives -= 1
 	if lives <= 0:
 		queue_free()
