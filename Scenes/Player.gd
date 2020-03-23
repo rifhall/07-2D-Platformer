@@ -24,7 +24,6 @@ func _physics_process(delta):
 	#character movement
 	if Input.is_action_pressed("ui_right"):
 		motion.x = min(dir*(motion.x+ACCEL), dir*MAX_SPEED)
-		print(motion.x)
 		#will change direction and use run animation
 		$Sprite.flip_h = false
 		$Sprite.play("Run")
@@ -60,12 +59,12 @@ func _physics_process(delta):
 	#detects what the player is hitting
 	
 
-func _on_StompDitector_area_entered(area: Area2D) -> void:
-	print("hello")
-	dir *= -1
+func _on_BadStuffDetector_body_entered(body):
+	if body.name == "Enemy":
+		lives -= 1
+		$ParallaxBackground/Lives.text = "Lives: " + str(lives)
+
+func _on_StompBox_body_entered(body):
 	motion.y = JUMP_HEIGHT
 	Points += 100
-	$Score.text = "Score: " + Points
-
-
-
+	$ParallaxBackground/Score.text = "Score: " + str(Points)
