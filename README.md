@@ -1,2 +1,2 @@
 # 07-2D-Platformer
-This is my first Platformer game
+This is my first Platformer game for one of my game classes. It is rather simple with only two levels but you will find interacting with the elements will cause your controls to get switched around. Unfortunately i was unable to figure out how to do save and load but there is a simple menu system. Thanks goes to heartbeast on youtube for the guides https://www.youtube.com/channel/UCrHQNOyU1q6BFEfkNq2CYMA
